@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="Tetractys">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>JS Bin</title>
+</head>
+<body>
+<canvas id="myCanvas" width="450" height="300" style="border: 1px solid black"></canvas>
+<script>
+	
+	var canvas = document.getElementById('myCanvas');
+var context = canvas.getContext('2d');
+
+var x = 220;
+var y = 60;
+
+function triangleDrawing() {
+  context.beginPath();
+  context.moveTo(x,y);
+  context.lineTo(x+30, y + 56);
+  context.lineTo(x-30, y + 56);
+  context.lineTo(x,y);
+  context.fillStyle = '#d36a6a';
+  context.fill();
+  }
+
+triangleDrawing();
+
+x -= 30;
+y += 55;
+
+for (var m = 0; m < 2; m++) { 
+  triangleDrawing();
+  x += 60;
+  context.fillStyle = '#57aa55';
+  context.fill();
+}
+
+x -= 150;
+y += 55;
+
+for (var i = 0; i < 3; i++) {
+  triangleDrawing();
+  x += 60;
+  context.fillStyle = '#427f7f';
+  context.fill();
+}
+	
+	
+	</script>
+</body>
+</html>
